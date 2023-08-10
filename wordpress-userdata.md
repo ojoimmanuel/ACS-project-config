@@ -17,7 +17,7 @@ mkdir /var/www/html/
 cp -R wordpress/* /var/www/html/
 cd /var/www/html/
 touch healthstatus
-sed -i "s/localhost/project15-db.cife53kj4bdy.us-east-1.rds.amazonaws.com/g" wp-config.php 
+sed -i "s/localhost/proj15-db.cife53kj4bdy.us-east-1.rds.amazonaws.com/g" wp-config.php 
 sed -i "s/username_here/admin/g" wp-config.php 
 sed -i "s/password_here/12345678/g" wp-config.php 
 sed -i "s/database_name_here/wordpressdb/g" wp-config.php 
