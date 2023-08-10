@@ -1,6 +1,7 @@
 #!/bin/bash
+sudo su -
 mkdir /var/www/
-sudo mount -t efs -o tls,accesspoint=fsap-02f0dcae0aefda010 fs-00ba538d40568a8cd:/ /var/www/
+#sudo mount -t efs -o tls,accesspoint=fsap-02f0dcae0aefda010 fs-00ba538d40568a8cd:/ /var/www/
 yum install -y httpd 
 systemctl start httpd
 systemctl enable httpd
@@ -23,12 +24,3 @@ sed -i "s/password_here/12345678/g" wp-config.php
 sed -i "s/database_name_here/wordpressdb/g" wp-config.php 
 chcon -t httpd_sys_rw_content_t /var/www/html/ -R
 systemctl restart httpd
-
-
-
-
-
-
-
-
-
