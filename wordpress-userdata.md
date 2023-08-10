@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir /var/www/
-sudo mount -t efs -o tls,accesspoint=fsap-005e1e003d8ca3554 fs-06cb59b6dca1441fa:/ /var/www/
+sudo mount -t efs -o tls,accesspoint=fsap-0116bc496f021ea85 fs-0ed4ebbfdaff89135:/ /var/www/
 yum install -y httpd 
 systemctl start httpd
 systemctl enable httpd
