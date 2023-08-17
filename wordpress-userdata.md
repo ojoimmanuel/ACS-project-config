@@ -1,6 +1,8 @@
 #!/bin/bash
 sudo su -
 mkdir /var/www/
+
+#obtain mount point from wp access point from EFS by clicking on attach
 sudo mount -t efs -o tls,accesspoint=fsap-0aeb7d37af73fce1c fs-09c2b46e4803c9924:/ /var/www/
 yum install -y httpd 
 systemctl start httpd
@@ -18,6 +20,8 @@ mkdir /var/www/html/
 cp -R wordpress/* /var/www/html/
 cd /var/www/html/
 touch healthstatus
+
+#edit for appropraite rds endpoint, and login details
 sed -i "s/localhost/proj15-db.cife53kj4bdy.us-east-1.rds.amazonaws.com/g" wp-config.php 
 sed -i "s/username_here/admin/g" wp-config.php 
 sed -i "s/password_here/12345678/g" wp-config.php 
