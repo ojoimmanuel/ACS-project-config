@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo us -
 yum install -y nginx
 systemctl start nginx
 systemctl enable nginx
@@ -11,6 +12,3 @@ sed -n 'w nginx.conf' reverse.conf
 systemctl restart nginx
 rm -rf reverse.conf
 rm -rf /ACS-project-config
-
-
-
